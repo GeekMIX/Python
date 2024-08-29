@@ -41,10 +41,9 @@ if __name__ == '__main__':
 
     # 等待所有线程完成
     t1.join()
-    print("All threads completed.")
+    
     t2.join()
-
-    print("Main thread waiting for threads to complete...")
-
+    print("All threads completed.")
+    
     print("Counter (instance):", mythread.counter)
     print("Counter (class):", Mythread.counter)
