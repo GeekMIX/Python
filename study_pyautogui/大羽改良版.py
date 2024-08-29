@@ -162,8 +162,7 @@ def dataCheck(sheet1):
 
 #任务
 def mainWork(img):
-    i = 1
-    while i < sheet1.nrows:
+    for i in range(1,sheet1.nrows):
         #取本行指令的操作类型
         cmdType = sheet1.row(i)[0]
         if cmdType.value == 1.0:
@@ -236,7 +235,6 @@ def mainWork(img):
             os.system(wincmd)
             print("运行系统命令:",wincmd)
             time.sleep(0.5) 
-        i += 1
 
 #主程序
 while True:
@@ -269,12 +267,11 @@ while True:
 
             elif key=='2':
                 print("")
-                count=0
                 times=input('输入需要循环的次数，务必输入正整数。\n')
                 times=int(times)
-                if count < times:
-                    while count < times:
-                            count+=1 
+                if times>0:
+                    for count in range(1,times+1):
+                            time.sleep(0.1)
                             print("正在执行第",count,"次","命令")
                             print("")
                             mainWork(sheet1)
