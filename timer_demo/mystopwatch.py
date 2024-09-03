@@ -57,7 +57,7 @@ class Stopwatch(QMainWindow):
         minutes, seconds = divmod(seconds, 60)
         time_str = f"{minutes:02d}:{seconds:02d}.{millisecond:02d}"
         self.time_label.setText(time_str)
-
+    # pause and start button
     def click_button1(self):
         if not self.is_running:
             self.timer.start(10)  # 更新间隔为10毫秒，表示每10毫秒更新一次时间
@@ -72,7 +72,7 @@ class Stopwatch(QMainWindow):
             self.button1.setText("Start")
             self.button2.setText("Reset")
             self.pause_stopwatch()
-
+    # reset and record button
     def click_button2(self):
         if self.button2.text() == "Record":
             self.show_record_time()
